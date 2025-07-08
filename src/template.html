@@ -3,9 +3,52 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Title</title>
+		<title>JS Validation</title>
 	</head>
 	<body>
-		<h1>Text</h1>
+		<form action="" id="form" novalidate>
+			<legend>Fill in form:</legend>
+
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+				<span class="error-text"
+					>Required: has to be a valid email address</span
+				>
+			</div>
+			<div class="form-group">
+				<label for="country">Country</label>
+				<input type="text" id="country" name="country" required />
+				<span class="error-text">Required</span>
+			</div>
+			<div class="form-group">
+				<label for="postal-code">Postal code</label>
+				<input
+					type="tel"
+					id="postal-code"
+					name="postal-code"
+					pattern="^\d{4}$"
+					maxlength="4"
+					required
+				/>
+				<span class="error-text">Required: has to be 4 digits</span>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required />
+				<span class="error-text">Required</span>
+
+				<label for="password-confirm">Password</label>
+				<input
+					type="password"
+					id="password-confirm"
+					name="password-confirm"
+					required
+				/>
+				<span class="error-text">Password fields has to match</span>
+			</div>
+
+			<button type="submit" id="submit">Submit</button>
+		</form>
 	</body>
 </html>
